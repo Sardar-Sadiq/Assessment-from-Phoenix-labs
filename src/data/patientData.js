@@ -1,0 +1,72 @@
+// src/data/patientData.js
+
+export const patientData = {
+  id: '1',
+  userId: '1',
+  currentWeight: 72,
+  goalWeight: 65,
+  startWeight: 80,
+  height: 175,
+  nextShipmentDate: '2025-08-05',
+  progressSummary: {
+    percentToGoal: 53,
+    weightLost: 8,
+    weeksOnProgram: 10,
+  },
+  weightHistory: [
+    { date: '2025-05-01', weight: 80, bmi: 26.1 },
+    { date: '2025-05-08', weight: 79, bmi: 25.8 },
+    { date: '2025-05-15', weight: 77.5, bmi: 25.3 },
+    { date: '2025-05-22', weight: 76.2, bmi: 24.9 },
+    { date: '2025-05-29', weight: 75.0, bmi: 24.5 },
+    { date: '2025-06-05', weight: 74.5, bmi: 24.3 },
+    { date: '2025-06-12', weight: 73.8, bmi: 24.1 },
+    { date: '2025-06-19', weight: 73.0, bmi: 23.9 },
+    { date: '2025-06-26', weight: 72.4, bmi: 23.7 },
+    { date: '2025-07-03', weight: 72.0, bmi: 23.5 },
+    { date: '2025-07-10', weight: 71.5, bmi: 23.4 },
+    { date: '2025-07-17', weight: 72.0, bmi: 23.5 },
+  ],
+  shipments: [
+    {
+      id: 's1',
+      date: '2025-05-01',
+      status: 'delivered',
+      medication: 'Wegovy',
+      dosage: '0.25mg',
+      trackingNumber: 'ACM12345678',
+    },
+    {
+      id: 's2',
+      date: '2025-05-29',
+      status: 'delivered',
+      medication: 'Wegovy',
+      dosage: '0.5mg',
+      trackingNumber: 'ACM23456789',
+    },
+    {
+      id: 's3',
+      date: '2025-06-26',
+      status: 'delivered',
+      medication: 'Wegovy',
+      dosage: '1.0mg',
+      trackingNumber: 'ACM34567890',
+    },
+    {
+      id: 's4',
+      date: '2025-07-24',
+      status: 'shipped',
+      medication: 'Wegovy',
+      dosage: '1.7mg',
+      trackingNumber: 'ACM45678901',
+    },
+    {
+      id: 's5',
+      date: '2025-08-05',
+      status: 'pending',
+      medication: 'Wegovy',
+      dosage: '2.4mg',
+      trackingNumber: 'ACM56789012',
+    },
+  ]
+};

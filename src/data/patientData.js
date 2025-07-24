@@ -1,4 +1,4 @@
-// src/data/patientData.js
+
 
 export const patientData = {
   id: '1',

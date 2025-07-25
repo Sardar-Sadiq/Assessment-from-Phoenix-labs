@@ -15,7 +15,10 @@ import {
 } from "recharts";
 
 const Dashboard = () => {
-  const user = users.find((u) => u.id === patientData.userId);
+  const currentUserId = "1"; // or "2" (mock the logged-in user here for now)
+const user = users.find((u) => u.id === currentUserId);
+const data = patientData.find((p) => p.userId === currentUserId);
+
   const {
     currentWeight,
     goalWeight,
@@ -23,7 +26,7 @@ const Dashboard = () => {
     weightHistory,
     shipments,
     nextShipmentDate,
-  } = patientData;
+  } = data;
 
   const weightLost = startWeight - currentWeight;
   const weightToGo = goalWeight - currentWeight;

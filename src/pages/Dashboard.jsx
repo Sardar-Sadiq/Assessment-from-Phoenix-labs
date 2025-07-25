@@ -3,6 +3,7 @@ import { patientData } from "../data/patientData";
 import { users } from "../data/users";
 import { Card, CardContent } from "../components/ui/Card";
 import { Weight, TrendingUp, Package } from "lucide-react";
+import  Progress  from '../components/ui/Progress';
 
 import {
   LineChart,
@@ -61,7 +62,7 @@ if (!user || !data) {
       </div>
       <h2 className="text-2xl font-bold">{currentWeight} kg</h2>
       <p className="text-sm text-muted-foreground">
-        <span className="text-green-600">{weightLost}</span> lost from start weight <br />
+        <span className="text-green-600">{weightLost}kg</span> lost from start weight <br />
         Goal: {goalWeight}kg ({weightToGo} kg to go)
       </p>
     </CardContent>
@@ -74,17 +75,27 @@ if (!user || !data) {
         <TrendingUp className="h-5 w-5 text-green-500" />
         <p className="text-muted-foreground">Progress</p>
       </div>
-      <h2 className="text-2xl font-bold">{weightLost} kg lost</h2>
-      <p className="text-sm text-muted-foreground">
-        {percentToGoal}% to goal • {weightHistory.length} weeks on program
-      </p>
+      <h2 className="text-2xl font-bold">{percentToGoal} % </h2>
+      
       {/* Progress bar */}
-      <div className="w-full bg-gray-200 rounded-full h-2.5 mt-2">
-        <div
-          className="bg-blue-600 h-2.5 rounded-full transition-all duration-500"
-          style={{ width: `${percentToGoal}%` }}
-        ></div>
+       <div>
+      {/* Progress bar */}
+      
+      <Progress value={percentToGoal} className="mt-2 h-2.5" />
+
+      {/* Start Weight and Goal Weight labels */}
+      <div className="flex justify-between mt-2"> {/* Use justify-between here */}
+        <p className="text-sm text-muted-foreground">
+          {startWeight}kg
+        </p>
+        <p className="text-sm text-muted-foreground">
+          {goalWeight}kg
+        </p>
       </div>
+    </div>
+    <p className="text-sm text-muted-foreground">
+          {weightHistory.length} Weeks on program
+        </p>
     </CardContent>
   </Card>
 
@@ -120,17 +131,16 @@ if (!user || !data) {
           <p className="text-sm text-gray-500 mb-4">Your weight change</p>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={weightHistory}>
-              <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="date" />
-              <YAxis domain={[60, 85]} />
+              
               <Tooltip />
               <Line
-                type="monotone"
+                type="natural"
                 dataKey="weight"
                 stroke="#6366f1"
-                strokeWidth={2}
+                strokeWidth={3}
                 dot={{ r: 4 }}
-                activeDot={{ r: 6 }}
+                activeDot={{ r: 7 }}
               />
             </LineChart>
           </ResponsiveContainer>

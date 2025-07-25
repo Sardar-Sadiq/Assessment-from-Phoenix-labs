@@ -93,66 +93,72 @@ const Dashboard = () => {
 </div>
 
 
-      {/* ✅ Weight Chart */}
-      <div>
-        <h2 className="text-xl font-semibold mb-2">📈 Weight Progress Chart</h2>
+     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-4">
+      {/* 📈 Left: Weight Change Chart */}
+      <div className="col-span-2 bg-white rounded-xl shadow-md p-5">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-1">
+          Weight Change
+        </h2>
+        <p className="text-sm text-gray-500 mb-4">Your weight change</p>
         <ResponsiveContainer width="100%" height={300}>
           <LineChart data={weightHistory}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="date" />
-            <YAxis unit="kg" />
+            <YAxis domain={[0, 100]} />
             <Tooltip />
-            <Line type="monotone" dataKey="weight" stroke="#2563eb" />
+            <Line
+              type="monotone"
+              dataKey="weight"
+              stroke="#6366f1"
+              strokeWidth={2}
+              dot={{ r: 4 }}
+              activeDot={{ r: 6 }}
+              fillOpacity={0.3}
+            />
           </LineChart>
         </ResponsiveContainer>
       </div>
 
-      {/* ✅ Shipments Section */}
-      <div>
-        <h2 className="text-xl font-semibold mb-2">🚚 Medication Shipments</h2>
-        <div className="overflow-x-auto border rounded-lg">
-          <table className="w-full text-left text-sm">
-            <thead className="bg-gray-100">
-              <tr>
-                <th className="p-2">Date</th>
-                <th className="p-2">Medication</th>
-                <th className="p-2">Dosage</th>
-                <th className="p-2">Status</th>
-                <th className="p-2">Tracking</th>
-              </tr>
-            </thead>
-            <tbody>
-              {shipments.map((s) => (
-                <tr key={s.id} className="border-t">
-                  <td className="p-2">{s.date}</td>
-                  <td className="p-2">{s.medication}</td>
-                  <td className="p-2">{s.dosage}</td>
-                  <td
-                    className={`p-2 font-semibold ${
-                      s.status === "pending"
-                        ? "text-yellow-500"
-                        : s.status === "shipped"
-                        ? "text-blue-600"
-                        : "text-green-600"
-                    }`}
-                  >
-                    {s.status}
-                  </td>
-                  <td className="p-2">{s.trackingNumber}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      {/* ✅ Next Shipment */}
-      <div>
-        <h2 className="text-md font-semibold mt-4 text-muted-foreground">
-          📦 Next Shipment Expected On:{" "}
-          <span className="text-black font-bold">{nextShipmentDate}</span>
+      {/* 🚚 Right: Recent Shipments */}
+      <div className="bg-white rounded-xl shadow-md p-5">
+        <h2 className="text-xl font-semibold text-gray-800 mb-1">
+          Recent shipments
         </h2>
+        <p className="text-sm text-gray-500 mb-4">
+          Status of your medication deliveries
+        </p>
+
+        <div className="space-y-4">
+          {shipments.slice(-3).reverse().map((s) => (
+            <div key={s.id} className="flex items-start justify-between">
+              <div>
+                <p className="font-medium text-gray-800">
+                  Wegovy {s.dosage}
+                </p>
+                <p className="text-sm text-gray-500">{s.date}</p>
+              </div>
+              <span
+                className={`capitalize text-xs font-semibold px-2 py-1 rounded-full ${
+                  s.status === "pending"
+                    ? "text-yellow-600 bg-yellow-100"
+                    : s.status === "shipped"
+                    ? "text-blue-600 bg-blue-100"
+                    : "text-green-600 bg-green-100"
+                }`}
+              >
+                {s.status}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        <p className="mt-4 text-sm text-blue-600 font-medium hover:underline cursor-pointer">
+          View all shipments →
+        </p>
       </div>
+    </div>
+
+      
     </div>
   );
 };

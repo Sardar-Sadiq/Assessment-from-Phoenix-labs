@@ -15,9 +15,15 @@ import {
 } from "recharts";
 
 const Dashboard = () => {
-  const currentUserId = "1"; // or "2" (mock the logged-in user here for now)
+ const currentUserId = Number(localStorage.getItem("currentUserId")) || 1;
+
+
 const user = users.find((u) => u.id === currentUserId);
 const data = patientData.find((p) => p.userId === currentUserId);
+
+if (!user || !data) {
+  return <div>User not found</div>;
+}
 
   const {
     currentWeight,

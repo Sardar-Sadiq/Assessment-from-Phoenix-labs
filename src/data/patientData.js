@@ -2,8 +2,8 @@
 
 export const patientData = [
   {
-    id: '1',
-    userId: '1',
+    id: 1,
+    userId: 1,
     currentWeight: 72,
     goalWeight: 65,
     startWeight: 80,
@@ -72,8 +72,8 @@ export const patientData = [
     ],
   },
   {
-    id: '2',
-    userId: '2',
+    id: 2,
+    userId: 2,
     currentWeight: 63,
     goalWeight: 70,
     startWeight: 60,

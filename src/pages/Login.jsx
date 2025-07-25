@@ -25,7 +25,7 @@ const Login = () => {
     );
 
     if (user) {
-      localStorage.setItem("currentUser", JSON.stringify(user));
+      localStorage.setItem("currentUserId", String(user.id)); 
       toast.success("Login successful!");
       setTimeout(() => {
         navigate("/dashboard");

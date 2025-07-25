@@ -47,8 +47,8 @@ if (!user || !data) {
     <div className="p-6 space-y-6">
       {/* 👋 Welcome */}
       <div>
-        <h1 className="text-3xl font-bold">Welcome, {user.fullName} 👋</h1>
-        <p className="text-muted-foreground">Here is your latest progress</p>
+        <h1 className="text-3xl font-bold">Dashboard</h1>
+      
       </div>
 
       {/* 📊 Cards Row */}

@@ -2,9 +2,10 @@ import { Outlet, NavLink } from "react-router-dom";
 import { Menu, Package, LineChart } from "lucide-react";
 import { users } from "../data/users";
 
-const currentUserId = 2;
-const currentUser = users.find((user) => user.id === currentUserId);
-console.log("Current User in Layout:", currentUser);
+ const currentUserId = Number(localStorage.getItem("currentUserId")) || 1;
+
+  const user = users.find((u) => u.id === currentUserId);
+
 
 export default function Layout() {
   return (
@@ -51,10 +52,10 @@ export default function Layout() {
           <div className="flex items-center gap-4">
             <span className="font-medium text-gray-700 text-sm truncate w-full">
               Welcome back,{" "} 
-               { currentUser?.fullName || "User"}
+               { user?.fullName || "User"}
             </span>
             <img
-              src={currentUser.avatar}
+              src={user.avatar}
               alt="User Avatar"
               className="w-10 h-10 rounded-full object-cover"
             />

@@ -38,8 +38,11 @@ const Login = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
       <Toaster richColors />
-      <Card className="w-full max-w-md p-6 rounded-2xl shadow-md">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Login</h2>
+      <Card className="w-full max-w-md h-[400px] p-6 rounded-2xl shadow-md">
+        <div className=" mb-6 text-center space-y-2">
+          <h2 className="text-3xl font-bold">Acme Patient Portal</h2>
+        <h3 className="text-gray-500">Enter your credentials to access your dashboard</h3>
+        </div>
         <form onSubmit={handleSubmit} className="space-y-4">
           <Input
             name="username"

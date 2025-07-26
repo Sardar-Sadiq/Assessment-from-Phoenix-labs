@@ -1,4 +1,4 @@
-# Shadcn-UI Template Usage Instructions
+# ACME Patient dashboard
 
 ## technology stack
 

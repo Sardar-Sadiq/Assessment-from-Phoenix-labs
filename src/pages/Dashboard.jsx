@@ -53,12 +53,15 @@ const Dashboard = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* 🟥 Card 1: Current Weight */}
         <Card>
-          <CardContent className="p-4 space-y-2">
-            <div className="flex items-center gap-2">
-              <Weight className="h-5 w-5 text-red-500" />
+          <CardContent className="p-4 ">
+            <div className="flex items-center justify-between">
+              
               <p className="text-muted-foreground">Current Weight</p>
+             <div className="bg-red-200 rounded-full p-2">
+               <Weight className="h-6 w-6 text-red-500 " />
+             </div>
             </div>
-            <h2 className="text-2xl font-bold">{currentWeight} kg</h2>
+            <h2 className="text-[2rem] font-bold">{currentWeight} kg</h2>
             <p className="text-sm text-muted-foreground">
               <span className="text-green-600">{weightLost}kg</span> lost from
               start weight <br />
@@ -69,12 +72,15 @@ const Dashboard = () => {
 
         {/* 🟩 Card 2: Progress Summary */}
         <Card>
-          <CardContent className="p-4 space-y-2">
-            <div className="flex items-center gap-2">
-              <TrendingUp className="h-5 w-5 text-green-500" />
+          <CardContent className="p-4 ">
+            <div className="flex items-center justify-between">
+             
               <p className="text-muted-foreground">Progress</p>
+              <div className="bg-green-200 rounded-full p-2">
+                 <TrendingUp className="h-6 w-6 text-green-500" />
+              </div>
             </div>
-            <h2 className="text-2xl font-bold">{percentToGoal} % </h2>
+            <h2 className="text-[2rem] font-bold">{percentToGoal} % </h2>
 
             {/* Progress bar */}
             <div>
@@ -96,12 +102,15 @@ const Dashboard = () => {
 
         {/* 🟦 Card 3: Next Shipment */}
         <Card>
-          <CardContent className="p-4 space-y-2">
-            <div className="flex items-center gap-2">
-              <Package className="h-5 w-5 text-blue-500" />
+          <CardContent className="p-4 ">
+            <div className="flex items-center justify-between">
+              
               <p className="text-muted-foreground">Next Shipment</p>
+              <div className="bg-blue-200 rounded-full p-2">
+                <Package className="h-6 w-6 text-blue-500" />
+              </div>
             </div>
-            <h2 className="text-2xl font-bold">
+            <h2 className="text-[2rem] font-bold">
               {new Date(nextShipmentDate).toLocaleDateString("en-GB", {
                 day: "2-digit",
                 month: "short",

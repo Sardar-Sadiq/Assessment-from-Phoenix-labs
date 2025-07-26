@@ -61,7 +61,11 @@ export default function Layout() {
         {/* Main content */}
         <main className="flex-1 p-6 overflow-auto">
           <Outlet />
+          
         </main>
+        <footer>
+            <h1 className="text-gray-500 text-sm border-t-1 text-center "> © 2025 ACME-Corp</h1>
+          </footer>
       </div>
     </div>
   );

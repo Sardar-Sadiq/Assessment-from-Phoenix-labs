@@ -96,3 +96,129 @@ npm run build
 ## 💡 Tip
 
 This prototype focuses on usability, clean design, and clarity. While mock data is used, the architecture is designed with **scalability and real-world use cases** in mind.
+# ACME Patient Dashboard
+
+A modern frontend patient portal built using React, Vite, Tailwind CSS, and ShadCN UI. This project simulates a real-world weight tracking and medication shipment dashboard for patients.
+
+---
+
+## 📌 Project Overview
+
+This dashboard enables users (patients) to:
+- Track weight and BMI progress
+- Visualize their journey with charts
+- Monitor upcoming and past shipments
+- View personalized data and progress insights
+
+The application currently runs with mock data and localStorage-based login for demo purposes.
+
+---
+
+## 🧰 Technology Stack
+
+This project is built with:
+
+- React (JavaScript)
+- Vite
+- Tailwind CSS
+- ShadCN UI (Radix + Tailwind-based components)
+- Recharts (Charts & Graphs)
+- React Router DOM
+- Lucide React (Icons)
+- Sonner (Toasts)
+
+---
+
+## 📁 Folder Structure
+
+```
+src/
+├── assets/              → Images, logos, etc.
+├── components/          → Custom + ShadCN UI components
+├── data/                → Mock data (users, patientData)
+├── lib/                 → Utilities, helpers
+├── pages/               → Route-based pages (Dashboard, Progress, etc.)
+├── routes/              → All route declarations
+├── App.jsx              → Main app layout
+├── main.jsx             → Entry point
+└── index.css            → Global styles (Tailwind)
+```
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone and install dependencies:
+```bash
+npm install
+```
+
+### 2. Start the development server:
+```bash
+npm run dev
+```
+
+### 3. To build for production:
+```bash
+npm run build
+```
+
+---
+
+## ✨ Features
+
+- 🔒 Login simulation using localStorage
+- 📊 Weight & BMI progress visualized using charts
+- 🚚 Shipment tracker
+- 📁 Clean and modular file structure
+- 📱 Fully responsive layout (mobile-friendly)
+- 🎨 Fully styled with Tailwind + ShadCN components
+
+---
+
+## 🧠 Mock Data
+
+All mock data is located in `src/data/`
+- `users.js`: login credentials and user profile
+- `patientData.js`: health and progress records
+
+---
+
+## 📦 Components
+
+All reusable UI components from ShadCN are located in:
+```js
+@/components/ui/
+```
+Import them like:
+```js
+import { Button } from "@/components/ui/button"
+```
+
+---
+
+## 📝 Notes
+
+- The alias `@/` points to the `src/` directory
+- All charts are powered by Recharts
+- BMI color indicators follow WHO guidelines
+
+---
+
+## 🧱 System Design Reference
+
+Refer to the [System Design Document](#) for a complete breakdown of:
+- App architecture
+- Data flow
+- UI structure
+- Security considerations
+- Future plans
+
+---
+
+## 📌 License
+This project is intended for demo and educational purposes only.
+
+---
+
+Feel free to fork, modify, and build upon it!

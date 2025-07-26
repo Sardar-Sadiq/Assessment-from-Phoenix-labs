@@ -159,13 +159,13 @@ const Dashboard = () => {
             Status of your medication deliveries
           </p>
 
-          <div className="space-y-4">
+          <div className=" mt-4 space-y-[50px]">
             {shipments
               .slice(-3)
               .reverse()
               .map((s) => (
-                <div key={s.id} className="flex items-start justify-between">
-                  <div>
+                <div key={s.id} className="flex items-start justify-between pb-2 border-b-1">
+                  <div >
                     <p className="font-medium text-gray-800">
                       Wegovy {s.dosage}
                     </p>
@@ -186,7 +186,7 @@ const Dashboard = () => {
               ))}
           </div>
 
-          <p className="mt-4 text-sm text-blue-600 font-medium hover:underline cursor-pointer">
+          <p className="mt-4 text-sm text-blue-600 font-medium hover:underline cursor-pointer text-center">
             View all shipments →
           </p>
         </div>

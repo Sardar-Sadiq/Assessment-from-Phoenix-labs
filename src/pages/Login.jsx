@@ -43,7 +43,7 @@ const Login = () => {
           <h2 className="text-3xl font-bold">Acme Patient Portal</h2>
         <h3 className="text-gray-500">Enter your credentials to access your dashboard</h3>
         </div>
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-10 pt-5 mx-4">
           <Input
             name="username"
             placeholder="Username"

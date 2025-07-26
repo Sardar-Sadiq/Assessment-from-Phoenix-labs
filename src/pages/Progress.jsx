@@ -98,26 +98,33 @@ export const Progress = ({ patientId }) => {
           {patient.progressSummary.percentToGoal}% complete
         </div>
       </div>
-      <div className="bg-gray-50 rounded p-3 flex flex-col gap-2 mt-2">
-        <div className="flex justify-between">
-          <span className="text-xs text-gray-600">Current</span>
-          <span className="font-bold">{patient.currentWeight} kg</span>
-        </div>
-        <div className="flex justify-between">
-          <span className="text-xs text-gray-600">Lost</span>
-          <span className="font-bold">{patient.progressSummary.weightLost} kg</span>
-        </div>
-        <div className="flex justify-between">
-          <span className="text-xs text-gray-600">To Go</span>
-          <span className="font-bold">
-            {patient.currentWeight - patient.goalWeight} kg
-          </span>
-        </div>
-        <div className="flex justify-between">
-          <span className="text-xs text-gray-600">Time</span>
-          <span className="font-bold">{patient.progressSummary.weeksOnProgram} wks</span>
-        </div>
-      </div>
+     <div className="grid grid-cols-2 gap-5 w-full mt-10 ">
+  {/* 1 */}
+  <div className="bg-[#F1F5F9] rounded px-6 py-2 flex flex-col justify-between shadow min-w-[110px]">
+    <span className="text-xs text-gray-400 font-medium">Current</span>
+    <span className="text-xl font-bold leading-tight mt-1">{patient.currentWeight} kg</span>
+  </div>
+  {/* 2 */}
+  <div className="bg-[#F1F5F9] rounded px-6 py-2 flex flex-col justify-between shadow min-w-[110px]">
+    <span className="text-xs text-gray-400 font-medium">Lost</span>
+    <span className="text-xl font-bold leading-tight mt-1">{patient.progressSummary.weightLost} kg</span>
+  </div>
+  {/* 3 */}
+  <div className="bg-[#F1F5F9] rounded px-6 py-2 flex flex-col justify-between shadow min-w-[110px]">
+    <span className="text-xs text-gray-400 font-medium">To Go</span>
+    <span className="text-xl font-bold leading-tight mt-1">
+      {(patient.currentWeight - patient.goalWeight).toFixed(1)} kg
+    </span>
+  </div>
+  {/* 4 */}
+  <div className="bg-[#F1F5F9] rounded px-6 py-2 flex flex-col justify-between shadow min-w-[110px]">
+    <span className="text-xs text-gray-400 font-medium">Rate</span>
+    <span className="text-xl font-bold leading-tight mt-1">
+      {(patient.progressSummary.weightLost / patient.progressSummary.weeksOnProgram).toFixed(1)} w/k
+    </span>
+  </div>
+</div>
+
     </div>
   </div>
 
